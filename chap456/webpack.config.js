@@ -1,3 +1,5 @@
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
   mode: 'production',
   entry: {
@@ -19,9 +21,12 @@ module.exports = {
         },
         {
           from: `${__dirname}/src/style.css`,
-          to: `${__dirname}/public`
+          to: `${__dirname}/public`,
         },
       ],
     }),
   ],
+  stats: {
+    errorDetails: true,
+  },
 };
